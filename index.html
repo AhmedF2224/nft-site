@@ -1,4 +1,5 @@
-<NFT Store>
+NFT Store :HumanZEN:  
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -52,13 +53,13 @@
       <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/d53d98806f3192d7cf2ecb108c7a5391.jpg" alt="NFT 1">
       <h3>NFT #1</h3>
       <div class="price">10 ZTC</div>
-      <button onclick="buyNFT(1,10)">Buy</button>
+      <button onclick="buyNFT('1',10)">Buy</button>
     </div>
     <div class="card">
       <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images%20(1)%20(2).png" alt="NFT 2">
       <h3>NFT #2</h3>
       <div class="price">25 ZTC</div>
-      <button onclick="buyNFT(2,25)">Buy</button>
+      <button onclick="buyNFT('2',25)">Buy</button>
     </div>
   </div>
 
@@ -72,7 +73,7 @@
     <h2>List Your NFT for Sale</h2>
     <form id="listForm">
       <input type="text" id="nftName" placeholder="NFT Name" required />
-      <input type="text" id="nftPrice" placeholder="Price in ZTC" required />
+      <input type="number" id="nftPrice" placeholder="Price in ZTC" required />
       <input type="text" id="nftImage" placeholder="Image URL" required />
       <button type="submit">Add NFT</button>
     </form>
@@ -121,12 +122,12 @@
       if (accounts.length === 0) return alert("Connect wallet first!");
       const tx = {
         from: accounts[0],
-        to: "0xEfd6F1eDA6e70d8FF35300191E2E9ec539662134",
+        to: "0xEfd6F1eDA6e70d8FF35300191E2E9ec539662134", // العنوان اللي يستلم الفلوس
         value: "0x" + (price * 1e18).toString(16)
       };
       try {
         await window.ethereum.request({ method: 'eth_sendTransaction', params: [tx] });
-        alert(`NFT #${id} bought for ${price} ZTC!`);
+        alert(`NFT ${id} bought for ${price} ZTC!`);
       } catch (err) {
         alert("Transaction failed: " + err.message);
       }
@@ -147,13 +148,14 @@
       const price = document.getElementById("nftPrice").value;
       const image = document.getElementById("nftImage").value;
 
+      const newId = Date.now(); // ID مؤقت
       const newCard = document.createElement("div");
       newCard.classList.add("card");
       newCard.innerHTML = `
         <img src="${image}" alt="${name}">
         <h3>${name}</h3>
         <div class="price">${price} ZTC</div>
-        <button onclick="buyNFT(Date.now(),${price})">Buy</button>
+        <button onclick="buyNFT('${newId}', ${price})">Buy</button>
       `;
       nftContainer.appendChild(newCard);
       form.reset();
@@ -161,3 +163,4 @@
   </script>
 </body>
 </html>
+```
