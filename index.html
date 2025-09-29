@@ -1,64 +1,74 @@
-<That's For Zenchain >
+That's For Zenchain 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>معرض NFT الخاص بي</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My NFT Site</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      background: #111;
+      color: #fff;
+      text-align: center;
       margin: 0;
       padding: 0;
-      text-align: center;
+    }
+    h1 {
+      padding: 20px;
     }
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
       padding: 20px;
     }
     .card {
-      background: #fff;
+      background: #222;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       overflow: hidden;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
     }
     .card img {
       width: 100%;
       height: auto;
       display: block;
     }
-    .card h3 {
-      margin: 10px 0;
-      font-size: 16px;
-      color: #333;
+    .card p {
+      margin: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>معرض NFT</h1>
+  <h1>🚀 My NFT Gallery</h1>
   <div class="gallery">
     <div class="card">
       <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/d53d98806f3192d7cf2ecb108c7a5391.jpg" alt="NFT 1">
-      <h3>NFT 1</h3>
+      <p>NFT #1</p>
     </div>
     <div class="card">
       <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images%20(1)%20(2).png" alt="NFT 2">
-      <h3>NFT 2</h3>
+      <p>NFT #2</p>
     </div>
     <div class="card">
       <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images%20(31).jpeg" alt="NFT 3">
-      <h3>NFT 3</h3>
+      <p>NFT #3</p>
     </div>
     <div class="card">
       <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images%20(8)%20(14).jpeg" alt="NFT 4">
-      <h3>NFT 4</h3>
+      <p>NFT #4</p>
     </div>
     <div class="card">
       <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images.nft3.png" alt="NFT 5">
-      <h3>NFT 5</h3>
+      <p>NFT #5</p>
     </div>
   </div>
 </body>
 </html>
+```
