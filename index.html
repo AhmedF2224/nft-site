@@ -2,172 +2,196 @@ That's For Zenchain ♥♥
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My NFT Gallery</title>
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NFT Site - ZTC Payments</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
       color: #fff;
       text-align: center;
-      min-height: 100vh;
     }
     header {
       padding: 20px;
-      background: rgba(0,0,0,0.3);
+      background: #1c1c1c;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
     }
-    header h1 { font-size: 2rem; color: #00e0ff; }
-    #connectBtn {
-      padding: 10px 18px;
-      border-radius: 8px;
-      font-weight: 600;
+    header h1 {
+      margin: 0;
+      color: #00ffc6;
+    }
+    .wallet-btn {
+      background: #00ffc6;
       border: none;
-      background: #ff0077;
-      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
-    #connectBtn:hover { background: #cc0061; }
+    .wallet-btn:hover {
+      background: #00b38f;
+    }
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
+      gap: 20px;
+      padding: 20px;
     }
     .card {
-      background: #1c1c1c;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.6);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
     }
-    .card:hover { transform: translateY(-10px); box-shadow: 0 12px 24px rgba(0,0,0,0.8); }
-    .card img { width: 100%; height: 250px; object-fit: cover; }
-    .card p { padding: 15px; font-size: 1.1rem; font-weight: 500; }
-    .buttons { display: flex; justify-content: space-around; padding: 15px; }
-    .btn {
-      text-decoration: none;
-      padding: 10px 18px;
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .price {
+      margin: 10px 0;
+      font-size: 18px;
+      color: #00ffc6;
+    }
+    .buy-btn {
+      background: #ff3d71;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
       border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: background 0.3s ease;
       cursor: pointer;
+      transition: 0.3s;
+      color: #fff;
     }
-    .view { background: #00e0ff; color: #111; }
-    .view:hover { background: #00b8d9; }
-    .buy { background: #ff0077; color: #fff; }
-    .buy:hover { background: #cc0061; }
-    footer {
-      padding: 20px;
-      margin-top: 30px;
-      background: rgba(0,0,0,0.4);
-      font-size: 0.9rem;
-      color: #bbb;
+    .buy-btn:hover {
+      background: #cc2f5a;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>🚀 My NFT Gallery</h1>
-    <button id="connectBtn">Connect Wallet</button>
+    <h1>🚀 NFT Gallery</h1>
+    <button id="walletButton" class="wallet-btn">Connect Wallet</button>
   </header>
 
   <div class="gallery">
     <div class="card">
-      <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/d53d98806f3192d7cf2ecb108c7a5391.jpg" alt="NFT 1">
-      <p>NFT #1</p>
-      <div class="buttons">
-        <a class="btn view" href="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/d53d98806f3192d7cf2ecb108c7a5391.jpg" target="_blank">View</a>
-        <button class="btn buy" onclick="buyNFT(1)">Buy</button>
-      </div>
+      <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/d53d98806f3192d7cf2ecb108c7a5391.jpg" alt="NFT 1"/>
+      <div class="price">Price: 5 ZTC</div>
+      <button class="buy-btn" onclick="buyNFT(5)">Buy</button>
     </div>
     <div class="card">
-      <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images%20(1)%20(2).png" alt="NFT 2">
-      <p>NFT #2</p>
-      <div class="buttons">
-        <a class="btn view" href="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images%20(1)%20(2).png" target="_blank">View</a>
-        <button class="btn buy" onclick="buyNFT(2)">Buy</button>
-      </div>
+      <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images%20(1)%20(2).png" alt="NFT 2"/>
+      <div class="price">Price: 15 ZTC</div>
+      <button class="buy-btn" onclick="buyNFT(15)">Buy</button>
     </div>
     <div class="card">
-      <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images%20(31).jpeg" alt="NFT 3">
-      <p>NFT #3</p>
-      <div class="buttons">
-        <a class="btn view" href="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images%20(31).jpeg" target="_blank">View</a>
-        <button class="btn buy" onclick="buyNFT(3)">Buy</button>
-      </div>
+      <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images%20(31).jpeg" alt="NFT 3"/>
+      <div class="price">Price: 7 ZTC</div>
+      <button class="buy-btn" onclick="buyNFT(7)">Buy</button>
     </div>
     <div class="card">
-      <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images%20(8)%20(14).jpeg" alt="NFT 4">
-      <p>NFT #4</p>
-      <div class="buttons">
-        <a class="btn view" href="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images%20(8)%20(14).jpeg" target="_blank">View</a>
-        <button class="btn buy" onclick="buyNFT(4)">Buy</button>
-      </div>
+      <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images%20(8)%20(14).jpeg" alt="NFT 4"/>
+      <div class="price">Price: 10 ZTC</div>
+      <button class="buy-btn" onclick="buyNFT(10)">Buy</button>
     </div>
     <div class="card">
-      <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images.nft3.png" alt="NFT 5">
-      <p>NFT #5</p>
-      <div class="buttons">
-        <a class="btn view" href="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images.nft3.png" target="_blank">View</a>
-        <button class="btn buy" onclick="buyNFT(5)">Buy</button>
-      </div>
+      <img src="https://raw.githubusercontent.com/AhmedF2224/nft-site/main/images.nft3.png" alt="NFT 5"/>
+      <div class="price">Price: 12 ZTC</div>
+      <button class="buy-btn" onclick="buyNFT(12)">Buy</button>
     </div>
   </div>
 
-  <footer>
-    © 2025 My NFT Site | Built with ❤️ on GitHub Pages
-  </footer>
-
   <script>
-    let account;
+    const ZTC_NETWORK = {
+      chainId: '0x20d8', // 8408
+      chainName: 'ZenChain Testnet',
+      rpcUrls: ['https://zenchain-testnet.api.onfinality.io/public'],
+      nativeCurrency: {
+        name: 'ZenChain',
+        symbol: 'ZTC',
+        decimals: 18
+      },
+      blockExplorerUrls: ['https://zentrace.io']
+    };
 
-    // Connect Wallet
-    document.getElementById('connectBtn').addEventListener('click', async () => {
-      if (window.ethereum) {
+    let currentAccount = null;
+
+    async function connectWallet() {
+      if (typeof window.ethereum !== "undefined") {
         try {
-          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-          account = accounts[0];
-          document.getElementById('connectBtn').innerText = "Connected: " + account.substring(0,6) + "...";
+          const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+          currentAccount = accounts[0];
+          document.getElementById("walletButton").innerText = "Disconnect";
         } catch (error) {
           console.error(error);
-          alert("Failed to connect wallet!");
         }
       } else {
         alert("MetaMask not found! Please install it.");
       }
+    }
+
+    function disconnectWallet() {
+      currentAccount = null;
+      document.getElementById("walletButton").innerText = "Connect Wallet";
+    }
+
+    document.getElementById("walletButton").addEventListener("click", () => {
+      if (currentAccount) {
+        disconnectWallet();
+      } else {
+        connectWallet();
+      }
     });
 
-    // Buy NFT (Dummy Transaction)
-    async function buyNFT(id) {
-      if (!account) {
+    async function switchToZTC() {
+      try {
+        await ethereum.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: ZTC_NETWORK.chainId }]
+        });
+      } catch (switchError) {
+        if (switchError.code === 4902) {
+          await ethereum.request({
+            method: "wallet_addEthereumChain",
+            params: [ZTC_NETWORK]
+          });
+        } else {
+          console.error(switchError);
+        }
+      }
+    }
+
+    async function buyNFT(amount) {
+      if (!currentAccount) {
         alert("Please connect your wallet first!");
         return;
       }
+      await switchToZTC();
+
+      const tx = {
+        from: currentAccount,
+        to: "0xEfd6F1eDA6e70d8FF35300191E2E9ec539662134", // your wallet
+        value: (amount * 1e18).toString(16)
+      };
+
       try {
-        const tx = await window.ethereum.request({
-          method: 'eth_sendTransaction',
-          params: [{
-            from: account,
-            to: account, // 🔴 هنا ممكن تغير لعنوان العقد أو المحفظة اللي تستلم الفلوس
-            value: '0x2386F26FC10000' // 0.01 ETH (hex)
-          }],
+        await ethereum.request({
+          method: "eth_sendTransaction",
+          params: [tx]
         });
-        alert(`NFT #${id} purchased! TX: ${tx}`);
-      } catch (err) {
-        console.error(err);
+        alert(`You bought NFT for ${amount} ZTC!`);
+      } catch (error) {
+        console.error(error);
         alert("Transaction failed!");
       }
     }
